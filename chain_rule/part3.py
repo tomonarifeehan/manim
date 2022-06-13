@@ -4,6 +4,7 @@ from manimlib import *
 # Constants
 small_font = 40
 
+
 # LaTeX Expressions
 latexOne = "$g(x) = sin(x^3)$"
 latexTwo = "$g\\hspace{.1cm}'(x) = cos(x^3)$"
@@ -18,6 +19,7 @@ def create_textbox(height, width, color, string):
     text = Text(string).move_to(box.get_center())
     result.add(box, text)
     return result
+
 
 # Content
 class Title(Scene):  
@@ -58,8 +60,11 @@ class Content(Scene):
         self.wait(1)
 
         self.play(Write(equationOne), run_time = 3)
+
         self.play(Write(equationTwo), run_time = 3)
+
         self.play(Write(equationThree), run_time = 3)
+        
         self.play(Write(equationFour), run_time = 3)
         
 

@@ -4,12 +4,14 @@ from manimlib import *
 # Constants
 small_font = 40
 
+
 # LaTeX Expressions
 latexOne = "$g(x) = sin(x)$"
 latexTwo = "$g\\hspace{.1cm}'(x) = cos(x)$"
 latexThree = "$g(x) = sin(f(x))$"
 latexFour = "$g\\hspace{.1cm}'(x) = cos(f(x))$"
 latexFive = "$\\boldsymbol{\\cdot}\\hspace{.1cm}f\\hspace{.1cm}'(x)$"
+
 
 # Helper Functions
 def create_textbox(height, width, color, string):
@@ -18,6 +20,7 @@ def create_textbox(height, width, color, string):
     text = Text(string).move_to(box.get_center())
     result.add(box, text)
     return result
+
 
 # Content
 class Title(Scene):  
@@ -75,14 +78,16 @@ class Content(Scene):
         self.wait(1)
 
         self.play(Write(equationOne), run_time = 3)
+
         self.play(Write(equationTwo), run_time = 3)
 
-        self.wait(1)
-
         self.play(Write(titleTwoText), run_time = 3)
+
         self.play(Write(equationThree), run_time = 3)
+
         self.play(Write(equationFour_partOne), run_time = 3)
         self.play(Write(equationFour_partTwo), run_time = 3)
+
 
 # Final Animation
 class FinalAnimation(Scene):

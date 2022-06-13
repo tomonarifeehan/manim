@@ -6,11 +6,13 @@ small_font = 40
 
 
 # LaTeX Expressions
-latexOne = "$$g(x) = 4\\hspace{.1cm}\\boldsymbol{\\cdot}\\hspace{.1cm}sin(2x^5)$$"
-latexTwo = "$$g\\hspace{.1cm}'(x) = 4\\hspace{.1cm}\\boldsymbol{\\cdot}\\hspace{.1cm}[\\hspace{2.6cm}]$$"
-latexThree = "$$cos(2x^5)$$"
-latexFour = "$$\\boldsymbol{\\cdot}\\hspace{.1cm}10x^4$$"
-latexFive = "$$ = 40\\hspace{.05cm}x^4\\hspace{.05cm}cos(2x^5)$$"
+latexOne = "$$g(x) = sin(x^2 + 3x + 4)$$"
+latexTwo = "$$g\\hspace{.1cm}'(x) = cos(x^2 + 3x + 4)$$"
+latexThree = "$$\\boldsymbol{\\cdot}\\hspace{.1cm}(\\hspace{1.1cm})$$"
+latexFour = "$$2x$$"
+latexFive = "$$+\\hspace{.1cm}3$$"
+latexSix = "$$=2x\\hspace{.1cm}cos(x^2 + 3x + 4)$$"
+latexSeven = "$$+\\hspace{.1cm}3\\hspace{.1cm}cos(x^2 + 3x + 4)$$"
 
 
 # Helper Functions
@@ -31,7 +33,7 @@ class Title(Scene):
         self.add(title)
         title.shift(3 * UP + 3.5 * LEFT)
 
-        titleText = TexText("Example 2", font_size = small_font)
+        titleText = TexText("Example 3", font_size = small_font)
         self.add(titleText)
         titleText.shift(3 * UP + 5 * LEFT)
 
@@ -43,23 +45,29 @@ class Content(Scene):
         self.add(textboxOne)
         textboxOne.shift(1 * DOWN)
 
-        # g(x) = 4 * sin(2x^5)
+        # g(x) = sin(x^2 + 3x + 4)
         equationOne = TexText(latexOne, font_size = small_font)
         equationOne.shift(0.5 * UP + 4 * LEFT)
 
-        # g'(x) = 4 * cos(2x^5) * 10x^4
+        # g'(x) = cos(x^2 + 3x + 4) * (2x + 3)
         equationTwo_partOne = TexText(latexTwo, font_size = small_font)
-        equationTwo_partOne.shift(0.75 * DOWN + 3 * LEFT)
+        equationTwo_partOne.shift(0.75 * DOWN + 3.9 * LEFT)
 
         equationTwo_partTwo = TexText(latexThree, font_size = small_font)
-        equationTwo_partTwo.shift(0.75 * DOWN + 2.5  * LEFT)
+        equationTwo_partTwo.shift(0.75 * DOWN + 0.7 * LEFT)
 
         equationTwo_partThree = TexText(latexFour, font_size = small_font)
-        equationTwo_partThree.shift(0.75 * DOWN + 1.1 * LEFT)
+        equationTwo_partThree.shift(0.75 * DOWN + 0.9 * LEFT)
 
-        # g'(x) = 40 * x^4  * cos(2x^5)
-        equationThree = TexText(latexFive, font_size = small_font)
-        equationThree.shift(1.75 * DOWN + 3.2 * LEFT)
+        equationTwo_partFour = TexText(latexFive, font_size = small_font)
+        equationTwo_partFour.shift(0.75 * DOWN + 0.3 * LEFT)
+
+        # g'(x) = 2x * cos(x^2 + 3x + 4) + 3 * cos(x^2 + 3x + 4)
+        equationThree_partOne = TexText(latexSix, font_size = small_font)
+        equationThree_partOne.shift(1.75 * DOWN + 3.1 * LEFT)
+
+        equationThree_partTwo = TexText(latexSeven, font_size = small_font)
+        equationThree_partTwo.shift(1.75 * DOWN + 0.7 * RIGHT)
 
         self.wait(1)
 
@@ -68,9 +76,11 @@ class Content(Scene):
         self.play(Write(equationTwo_partOne), run_time = 3)
         self.play(Write(equationTwo_partTwo), run_time = 3)
         self.play(Write(equationTwo_partThree), run_time = 3)
-        
-        self.play(Write(equationThree), run_time = 3)
-        
+        self.play(Write(equationTwo_partFour), run_time = 3)
+
+        self.play(Write(equationThree_partOne), run_time = 3)
+        self.play(Write(equationThree_partTwo), run_time = 3)
+
 
 # Final Animation
 class FinalAnimation(Scene):

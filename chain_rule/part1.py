@@ -4,6 +4,7 @@ from manimlib import *
 # Constants
 small_font = 40
 
+
 # LaTeX Expressions
 latexOne = "$h(x) = f\\hspace{.1cm}[ \\hspace{.2cm}g(x)\\hspace{.2cm}]$"
 latexTwo_partOne = "$h\\hspace{.1cm}'(x) = f\\hspace{.1cm}'\\hspace{.1cm}[\\hspace{.2cm}g(x)\\hspace{.2cm}]$"
