@@ -1,2 +1,3 @@
 manim/
 __pycache__/
+ *.pyc
