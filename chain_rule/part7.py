@@ -11,7 +11,16 @@ latexTwo = "$$=[\\hspace{.05cm}sin(x^5+4x^4)\\hspace{.05cm}]^7$$"
 latexThree = "$$g'(x)=7\\hspace{.05cm}[\\hspace{2.2cm}]^6$$"
 latexFour = "$$sin(x^5+4x^4)$$"
 latexFive = "$$\\boldsymbol{\\cdot}\\hspace{.1cm}cos(x^5+4x^4)$$"
-latexSix = "$$\\boldsymbol{\\cdot}\\hspace{.1cm}(5x^4+16x^3)$$"
+
+
+latexSix = "$$\\boldsymbol{\\cdot}\\hspace{.1cm}(\\hspace{1.6cm})$$"
+latexSeven = "$$5x^4$$"
+latexEight = "$$+\\hspace{.1cm}4x^4$$"
+
+latexNine = "$$=7\\hspace{.05cm}sin^6(x^5+4x^4)$$"
+latexTen = "$$\\boldsymbol{\\cdot}\\hspace{.1cm}[\\hspace{6cm}]$$"
+latexEleven = "$$5x^4cos(x^5+4x^4)$$"
+latexTwelve = "$$+\\hspace{.1cm}16x^3cos(x^5+4x^4)$$"
 
 
 # Helper Functions
@@ -61,17 +70,43 @@ class Content(Scene):
         equationTwo_partThree.shift(0.75 * DOWN + 0.2 * RIGHT)
 
         equationTwo_partFour = TexText(latexSix, font_size = small_font)
-        equationTwo_partFour.shift(0.75 * DOWN + 2.9 * RIGHT)
+        equationTwo_partFour.shift(0.75 * DOWN + 2.8 * RIGHT)
+
+        equationTwo_partFive = TexText(latexSeven, font_size = small_font)
+        equationTwo_partFive.shift(0.73 * DOWN + 2.35 * RIGHT)
+
+        equationTwo_partSix = TexText(latexEight, font_size = small_font)
+        equationTwo_partSix.shift(0.73 * DOWN + 3.3 * RIGHT)
+
+        # g'(x) = 7 * sin^6(x^5 + 4x^4) * [5x^4 * cos(x^5 + 4x^4) + 16x^3 * cos(x^5 + 4x^4)]
+        equationThree_partOne = TexText(latexNine, font_size = small_font)
+        equationThree_partOne.shift(1.75 * DOWN + 3.3 * LEFT)
+
+        equationThree_partTwo = TexText(latexTen, font_size = small_font)
+        equationThree_partTwo.shift(1.75 * DOWN + 2.1 * RIGHT)
+
+        equationThree_partThree = TexText(latexEleven, font_size = small_font)
+        equationThree_partThree.shift(1.75 * DOWN + 0.4 * RIGHT)
+
+        equationThree_partFour = TexText(latexTwelve, font_size = small_font)
+        equationThree_partFour.shift(1.75 * DOWN + 3.8 * RIGHT)
 
         self.wait(1)
 
-        self.play(Write(equationOne_partOne), run_time = 3)
-        self.play(Write(equationOne_partTwo), run_time = 3)
+        self.play(Write(equationOne_partOne), run_time = 2)
+        self.play(Write(equationOne_partTwo), run_time = 2)
 
-        self.play(Write(equationTwo_partOne), run_time = 3)
-        self.play(Write(equationTwo_partTwo), run_time = 3)
-        self.play(Write(equationTwo_partThree), run_time = 3)
-        self.play(Write(equationTwo_partFour), run_time = 3)
+        self.play(Write(equationTwo_partOne), run_time = 2)
+        self.play(Write(equationTwo_partTwo), run_time = 2)
+        self.play(Write(equationTwo_partThree), run_time = 2)
+        self.play(Write(equationTwo_partFour), run_time = 2)
+        self.play(Write(equationTwo_partFive), run_time = 2)
+        self.play(Write(equationTwo_partSix), run_time = 2)
+
+        self.play(Write(equationThree_partOne), run_time = 2)
+        self.play(Write(equationThree_partTwo), run_time = 2)
+        self.play(Write(equationThree_partThree), run_time = 2)
+        self.play(Write(equationThree_partFour), run_time = 2)
         
 
 # Final Animation
