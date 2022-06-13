@@ -1,6 +1,9 @@
 from manimlib import *
 
 
+# Constants
+small_font = 40
+
 # LaTeX Expressions
 latexOne = "$h(x) = f\\hspace{.1cm}[ \\hspace{.2cm}g(x)\\hspace{.2cm}]$"
 latexTwo_partOne = "$h\\hspace{.1cm}'(x) = f\\hspace{.1cm}'\\hspace{.1cm}[\\hspace{.2cm}g(x)\\hspace{.2cm}]$"
@@ -37,14 +40,14 @@ class ChainRule(Scene):
     def construct(self):
         
         # h(x) = f[g(x)]
-        equationOne = TexText(latexOne, font_size = 40)
+        equationOne = TexText(latexOne, font_size = small_font)
         equationOne.shift(0.5 * UP + 4 * LEFT)
         
         # h'(x) = f'[g(x)] * g'(x)
-        equationTwo_partOne = TexText(latexTwo_partOne, font_size = 40)
+        equationTwo_partOne = TexText(latexTwo_partOne, font_size = small_font)
         equationTwo_partOne.shift(1 * DOWN + 3.7 * LEFT)
 
-        equationTwo_partTwo = TexText(latexTwo_partTwo, font_size = 40)
+        equationTwo_partTwo = TexText(latexTwo_partTwo, font_size = small_font)
         equationTwo_partTwo.shift(1 * DOWN + 1.1 * LEFT)
         
         self.wait(1)
