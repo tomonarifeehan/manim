@@ -3,11 +3,12 @@ from manimlib import *
 
 # Constants
 small_font = 40
+medium_font = 50
 
 
 # LaTeX Expressions
-latexOne = "$h(x) = f\\hspace{.1cm}[ \\hspace{.2cm}g(x)\\hspace{.2cm}]$"
-latexTwo_partOne = "$h\\hspace{.1cm}'(x) = f\\hspace{.1cm}'\\hspace{.1cm}[\\hspace{.2cm}g(x)\\hspace{.2cm}]$"
+latexOne = "$h(x) = f\\hspace{.1cm}[ \\hspace{.1cm}g(x)\\hspace{.1cm}]$"
+latexTwo_partOne = "$h\\hspace{.1cm}'(x) = f\\hspace{.1cm}'\\hspace{.1cm}[\\hspace{.1cm}g(x)\\hspace{.1cm}]$"
 latexTwo_partTwo = "$\\hspace{.1cm}\\boldsymbol{\\cdot}\\hspace{.2cm}g\\hspace{.1cm}'(x)$"
 
 
@@ -24,10 +25,13 @@ def create_textbox(height, width, color, string):
 class Title(Scene):  
     def construct(self):
 
-        textbox = create_textbox(height = 1, width = 5, color = TEAL_B, string = " Chain Rule ")
+        textbox = create_textbox(height = 1, width = 5, color = TEAL_B, string = "")
         self.add(textbox)
-
         textbox.shift(3 * UP + 4 * LEFT)
+
+        titleText = TexText("Chain Rule", font_size = medium_font)
+        self.add(titleText)
+        titleText.shift(3 * UP + 5 * LEFT)
 
 class Content(Scene):  
     def construct(self):
@@ -53,10 +57,10 @@ class ChainRule(Scene):
         
         self.wait(1)
 
-        self.play(Write(equationOne), run_time = 3)
+        self.play(Write(equationOne), run_time = 1)
         self.wait(2)
         
-        self.play(Write(equationTwo_partOne), run_time = 3)
+        self.play(Write(equationTwo_partOne), run_time = 1)
         self.wait(1)
 
         self.play(Write(equationTwo_partTwo), run_time = 1)

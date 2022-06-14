@@ -73,10 +73,10 @@ class Content(Scene):
         equationTwo_partFour.shift(0.75 * DOWN + 2.8 * RIGHT)
 
         equationTwo_partFive = TexText(latexSeven, font_size = small_font)
-        equationTwo_partFive.shift(0.73 * DOWN + 2.35 * RIGHT)
+        equationTwo_partFive.shift(0.72 * DOWN + 2.35 * RIGHT)
 
         equationTwo_partSix = TexText(latexEight, font_size = small_font)
-        equationTwo_partSix.shift(0.73 * DOWN + 3.3 * RIGHT)
+        equationTwo_partSix.shift(0.72 * DOWN + 3.3 * RIGHT)
 
         # g'(x) = 7 * sin^6(x^5 + 4x^4) * [5x^4 * cos(x^5 + 4x^4) + 16x^3 * cos(x^5 + 4x^4)]
         equationThree_partOne = TexText(latexNine, font_size = small_font)
