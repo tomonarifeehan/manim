@@ -15,7 +15,7 @@ latexFour = "$$ = 3x^2\\boldsymbol{\\cdot}\\hspace{.1cm}cos(x^3)$$"
 # Helper Functions
 def create_textbox(height, width, color, string):
     result = VGroup()
-    box = Rectangle(height = height, width = width, fill_color = color, fill_opacity = 0.1, stroke_color = color)
+    box = Rectangle(height = height, width = width, fill_color = color, fill_opacity = 0.9, stroke_color = color)
     text = Text(string).move_to(box.get_center())
     result.add(box, text)
     return result
@@ -26,11 +26,11 @@ class Title(Scene):
     def construct(self):
 
         # Title Box
-        title = create_textbox(height = 1, width = 6, color = TEAL_B, string = "")
+        title = create_textbox(height = 1, width = 6, color = "#E5C6BB", string = "")
         self.add(title)
         title.shift(3 * UP + 3.5 * LEFT)
 
-        titleText = TexText("Example 1", font_size = small_font)
+        titleText = TexText("Example 1", font_size = small_font, color = BLACK)
         self.add(titleText)
         titleText.shift(3 * UP + 5 * LEFT)
 
@@ -38,23 +38,23 @@ class Title(Scene):
 class Content(Scene):  
     def construct(self):
 
-        textboxOne = create_textbox(height = 5, width = 13, color = TEAL_B, string = "")
+        textboxOne = create_textbox(height = 5, width = 13, color = "#E5C6BB", string = "")
         self.add(textboxOne)
         textboxOne.shift(1 * DOWN)
 
         # g(x) = sin(x^3)
-        equationOne = TexText(latexOne, font_size = small_font)
+        equationOne = TexText(latexOne, font_size = small_font, color = BLACK)
         equationOne.shift(0.5 * UP + 4.7 * LEFT)
 
         # g'(x) = cos(x^3) * 3x^2
-        equationTwo = TexText(latexTwo, font_size = small_font)
+        equationTwo = TexText(latexTwo, font_size = small_font, color = BLACK)
         equationTwo.shift(1 * DOWN + 4.6 * LEFT)
 
-        equationThree = TexText(latexThree, font_size = small_font)
+        equationThree = TexText(latexThree, font_size = small_font, color = BLACK)
         equationThree.shift(1 * DOWN + 2.6  * LEFT)
 
         # = 3x^2 * cos(x^3)
-        equationFour = TexText(latexFour, font_size = small_font)
+        equationFour = TexText(latexFour, font_size = small_font, color = BLACK)
         equationFour.shift(2 * DOWN + 3.5  * LEFT)
 
         self.wait(1)

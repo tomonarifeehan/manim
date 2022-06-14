@@ -26,7 +26,7 @@ latexTwelve = "$$+\\hspace{.1cm}16x^3cos(x^5+4x^4)$$"
 # Helper Functions
 def create_textbox(height, width, color, string):
     result = VGroup()
-    box = Rectangle(height = height, width = width, fill_color = color, fill_opacity = 0.1, stroke_color = color)
+    box = Rectangle(height = height, width = width, fill_color = color, fill_opacity = 0.9, stroke_color = color)
     text = Text(string).move_to(box.get_center())
     result.add(box, text)
     return result
@@ -36,11 +36,11 @@ class Title(Scene):
     def construct(self):
 
         # Title Box
-        title = create_textbox(height = 1, width = 6, color = TEAL_B, string = "")
+        title = create_textbox(height = 1, width = 6, color = "#E5C6BB", string = "")
         self.add(title)
         title.shift(3 * UP + 3.5 * LEFT)
 
-        titleText = TexText("Example 5", font_size = small_font)
+        titleText = TexText("Example 5", font_size = small_font, color = BLACK)
         self.add(titleText)
         titleText.shift(3 * UP + 5 * LEFT)
 
@@ -48,47 +48,47 @@ class Title(Scene):
 class Content(Scene):  
     def construct(self):
 
-        textboxOne = create_textbox(height = 5, width = 13, color = TEAL_B, string = "")
+        textboxOne = create_textbox(height = 5, width = 13, color = "#E5C6BB", string = "")
         self.add(textboxOne)
         textboxOne.shift(1 * DOWN)
 
         # g(x) = sin^7(x^5 + 4x^4)
-        equationOne_partOne = TexText(latexOne, font_size = small_font)
+        equationOne_partOne = TexText(latexOne, font_size = small_font, color = BLACK)
         equationOne_partOne.shift(0.5 * UP + 4 * LEFT)
 
-        equationOne_partTwo = TexText(latexTwo, font_size = small_font)
+        equationOne_partTwo = TexText(latexTwo, font_size = small_font, color = BLACK)
         equationOne_partTwo.shift(0.5 * UP + 0.3 * LEFT)
 
         # g'(x) = 7 * sin^6(x^5 + 4x^4) * cos(x^5 + 4x^4) * (5x^4 + 16x^3)
-        equationTwo_partOne = TexText(latexThree, font_size = small_font)
+        equationTwo_partOne = TexText(latexThree, font_size = small_font, color = BLACK)
         equationTwo_partOne.shift(0.75 * DOWN + 3.6 * LEFT)
 
-        equationTwo_partTwo = TexText(latexFour, font_size = small_font)
+        equationTwo_partTwo = TexText(latexFour, font_size = small_font, color = BLACK)
         equationTwo_partTwo.shift(0.75 * DOWN + 2.85 * LEFT)
 
-        equationTwo_partThree = TexText(latexFive, font_size = small_font)
+        equationTwo_partThree = TexText(latexFive, font_size = small_font, color = BLACK)
         equationTwo_partThree.shift(0.75 * DOWN + 0.2 * RIGHT)
 
-        equationTwo_partFour = TexText(latexSix, font_size = small_font)
+        equationTwo_partFour = TexText(latexSix, font_size = small_font, color = BLACK)
         equationTwo_partFour.shift(0.75 * DOWN + 2.8 * RIGHT)
 
-        equationTwo_partFive = TexText(latexSeven, font_size = small_font)
+        equationTwo_partFive = TexText(latexSeven, font_size = small_font, color = BLACK)
         equationTwo_partFive.shift(0.72 * DOWN + 2.35 * RIGHT)
 
-        equationTwo_partSix = TexText(latexEight, font_size = small_font)
+        equationTwo_partSix = TexText(latexEight, font_size = small_font, color = BLACK)
         equationTwo_partSix.shift(0.72 * DOWN + 3.3 * RIGHT)
 
         # g'(x) = 7 * sin^6(x^5 + 4x^4) * [5x^4 * cos(x^5 + 4x^4) + 16x^3 * cos(x^5 + 4x^4)]
-        equationThree_partOne = TexText(latexNine, font_size = small_font)
+        equationThree_partOne = TexText(latexNine, font_size = small_font, color = BLACK)
         equationThree_partOne.shift(1.75 * DOWN + 3.3 * LEFT)
 
-        equationThree_partTwo = TexText(latexTen, font_size = small_font)
+        equationThree_partTwo = TexText(latexTen, font_size = small_font, color = BLACK)
         equationThree_partTwo.shift(1.75 * DOWN + 2.1 * RIGHT)
 
-        equationThree_partThree = TexText(latexEleven, font_size = small_font)
+        equationThree_partThree = TexText(latexEleven, font_size = small_font, color = BLACK)
         equationThree_partThree.shift(1.75 * DOWN + 0.4 * RIGHT)
 
-        equationThree_partFour = TexText(latexTwelve, font_size = small_font)
+        equationThree_partFour = TexText(latexTwelve, font_size = small_font, color = BLACK)
         equationThree_partFour.shift(1.75 * DOWN + 3.8 * RIGHT)
 
         self.wait(1)
